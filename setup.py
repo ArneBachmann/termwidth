@@ -6,13 +6,13 @@ version = (lt.tm_year, (10 + lt.tm_mon) * 100 + lt.tm_mday, (10 + lt.tm_hour) * 
 versionString = '.'.join(map(str, version))
 
 # Clean up old binaries for twine upload
-if os.path.exists("dist"):
-  rmFiles = list(sorted(os.listdir("dist")))
-  print(repr(rmFiles))
-  for file in (f for f in rmFiles[:-1] if any([f.endswith(ext) for ext in (".tar.gz", "zip")])):
-    print("Removing old sdist archive %s" % file)
-    try: os.unlink(os.path.join("dist", file))
-    except: print("Cannot remove old distribution file " + file)
+#if os.path.exists("dist"):
+#  rmFiles = list(sorted(os.listdir("dist")))
+#  print(repr(rmFiles))
+#  for file in (f for f in rmFiles[:-1] if any([f.endswith(ext) for ext in (".tar.gz", "zip")])):
+#    print("Removing old sdist archive %s" % file)
+#    try: os.unlink(os.path.join("dist", file))
+#    except: print("Cannot remove old distribution file " + file)
 
 setup(
   name = 'termwidth',
@@ -33,7 +33,7 @@ setup(
   author_email = 'ArneBachmann@users.noreply.github.com',
   maintainer = 'Arne Bachmann',
   maintainer_email = 'ArneBachmann@users.noreply.github.com',
-  url = 'http://github.com/ArneBachmann',
+  url = 'http://github.com/ArneBachmann/termwidth',
   license = 'GNU General Public License v3 (GPLv3)',
   packages = [""],
   zip_safe = False
