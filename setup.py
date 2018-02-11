@@ -5,6 +5,8 @@ lt = time.localtime()
 version = (lt.tm_year, (10 + lt.tm_mon) * 100 + lt.tm_mday, (10 + lt.tm_hour) * 100 + lt.tm_min)
 versionString = '.'.join(map(str, version))
 
+with open("README", "r") as fd: description = fd.read().replace("\r").split("\n")
+
 # Clean up old binaries for twine upload
 #if os.path.exists("dist"):
 #  rmFiles = list(sorted(os.listdir("dist")))
@@ -18,7 +20,7 @@ setup(
   name = 'termwidth',
   version = versionString,
   description = "Terminal width detection library",
-  long_description = "",
+  long_description = description,
   classifiers = [c.strip() for c in """
         Development Status :: 5 - Production/Stable
         Intended Audience :: Developers
